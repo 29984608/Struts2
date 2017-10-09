@@ -40,4 +40,8 @@
             <result name="success">/hello.jsp</result>
         </action>
     </package>
+    <package name="dmeo2" extends="struts-default" namespace="/">
+        <action name="form1" class="Form.Form1DemoAction"></action>
+        <action name="form2" class="Form.Form2DemoAction"></action>
+    </package>
 </struts>
