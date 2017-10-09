@@ -6,19 +6,19 @@
 
 <struts>
     <constant name="struts.i18n.encoding" value="utf-8"></constant>
-<!--    <package name="hellodemo" extends="struts-default" namespace="/">
-        <action name="hello" class="Action.HelloAction">
-            &lt;!&ndash;配置方法的返回值到页面&ndash;&gt;
-            <result name="ok">/hello.jsp</result>
-        </action>
-    </package>-->
+    <!--    <package name="hellodemo" extends="struts-default" namespace="/">
+            <action name="hello" class="Action.HelloAction">
+                &lt;!&ndash;配置方法的返回值到页面&ndash;&gt;
+                <result name="ok">/hello.jsp</result>
+            </action>
+        </package>-->
     <!--引入hello.xml-->
-   <!-- <include file="hello.xml"></include>-->
+    <!-- <include file="hello.xml"></include>-->
     <!--配置action的方法访问-->
-<!--    <package name="method" extends="struts-default" namespace="/">
-        <action name="addAction" class="Method.BookAction" method="add"></action>
-        <action name="updateAction" class="Method.BookAction" method="update"></action>
-    </package>-->
+    <!--    <package name="method" extends="struts-default" namespace="/">
+            <action name="addAction" class="Method.BookAction" method="add"></action>
+            <action name="updateAction" class="Method.BookAction" method="update"></action>
+        </package>-->
     <!--通配符方式实现-->
     <package name="method1" extends="struts-default" namespace="/">
         <!--
@@ -27,9 +27,17 @@
         （2）执行action里面的update方法，访问book_update，使用book_* 可以匹配到，*相当于update
         上面两个路径使用book_* 可以匹配到
         -->
-        <action name="book_*" class="Method.BookAction" method="{1}">
-
+        <!--全局结果页面配置-->
+        <global-results>
+            <result name="success">/hello.jsp</result>
+        </global-results>
+        <!--<action name="book_*" class="Method.BookAction" method="{1}"></action>-->
+        <action name="books" class="Action.BooksAction">
+            <!--action访问路径-->
+            <result name="success"  type="chain">orders</result>
         </action>
-
+        <action name="orders" class="Action.OrdersAction">
+            <result name="success">/hello.jsp</result>
+        </action>
     </package>
 </struts>

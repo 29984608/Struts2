@@ -16,5 +16,4 @@ public class BookAction extends ActionSupport {
         System.out.println("update.......");
         return  NONE;
     }
-
 }
