@@ -1,4 +1,4 @@
-<%--
+<%@ page import="org.apache.struts2.ServletActionContext" %><%--
   Created by IntelliJ IDEA.
   User: pc
   Date: 2017/10/9

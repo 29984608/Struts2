@@ -44,5 +44,9 @@
         <action name="form1" class="Form.Form1DemoAction"></action>
         <action name="form2" class="Form.Form2DemoAction"></action>
         <action name="form3" class="Form.Form3DemoAction"></action>
+        <action name="form4" class="Form.Form4DemoAction"></action>
+        <action name="data1" class="Date.DateDemo1Action"></action>
+        <action name="data2" class="Date.DateDemo2Action"></action>
+        <action name="data3" class="Date.DateDemo3Action"></action>
     </package>
 </struts>
