@@ -48,5 +48,18 @@
         <action name="data1" class="Date.DateDemo1Action"></action>
         <action name="data2" class="Date.DateDemo2Action"></action>
         <action name="data3" class="Date.DateDemo3Action"></action>
+        <action name="list" class="Date.ListAction"></action>
+        <action name="map" class="Date.MapAction"></action>
+    </package>
+    <package name="demo03" extends="struts-default" namespace="/">
+        <action name="demo03" class="Action.UserAction">
+            <result name="success">/ognl.jsp</result>
+        </action>
+        <action name="stack" class="Action.ValueStackDemoAction">
+            <result name="success">/ognl.jsp</result>
+        </action>
+        <action name="ObjectDemo" class="Action.ObjectDemoAction">
+            <result name="success">/ognl.jsp</result>
+        </action>
     </package>
 </struts>
