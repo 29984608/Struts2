@@ -2,6 +2,7 @@ package Action;
 
 import com.opensymphony.xwork2.ActionSupport;
 import entity.User;
+import org.junit.Test;
 
 public class ObjectDemoAction extends ActionSupport {
     //1  定义对象变量
@@ -19,4 +20,5 @@ public class ObjectDemoAction extends ActionSupport {
         user.setAddress("陕西");
         return "success";
     }
+
 }

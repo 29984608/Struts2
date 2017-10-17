@@ -28,6 +28,6 @@ public class Form2DemoAction extends ActionSupport {
         //3 ServletContext域
         ServletContext context = ServletActionContext.getServletContext();
         context.setAttribute("contextname","contextValue");
-        return NONE;
+        return "success";
     }
 }

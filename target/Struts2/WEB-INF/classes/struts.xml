@@ -42,7 +42,9 @@
     </package>
     <package name="dmeo2" extends="struts-default" namespace="/">
         <action name="form1" class="Form.Form1DemoAction"></action>
-        <action name="form2" class="Form.Form2DemoAction"></action>
+        <action name="form2" class="Form.Form2DemoAction">
+        <result name="success">/form2.jsp</result>
+        </action>
         <action name="form3" class="Form.Form3DemoAction"></action>
         <action name="form4" class="Form.Form4DemoAction"></action>
         <action name="data1" class="Date.DateDemo1Action"></action>
@@ -59,6 +61,18 @@
             <result name="success">/ognl.jsp</result>
         </action>
         <action name="ObjectDemo" class="Action.ObjectDemoAction">
+            <result name="success">/ognl.jsp</result>
+        </action>
+        <action name="ListDemo" class="Action.ListDemoAction">
+            <result name="success">/ognl.jsp</result>
+        </action>
+        <action name="StringStack" class="valuestack.ValueStackString">
+            <result name="success">/ognl.jsp</result>
+        </action>
+        <action name="ObjectStack" class="valuestack.ValueStackObject">
+            <result name="success">/ognl.jsp</result>
+        </action>
+        <action name="List1Stack" class="valuestack.ValueStackList1">
             <result name="success">/ognl.jsp</result>
         </action>
     </package>

@@ -1,3 +1,4 @@
+<%@ taglib prefix="s" uri="/struts-tags" %>
 <%@ page import="org.apache.struts2.ServletActionContext" %><%--
   Created by IntelliJ IDEA.
   User: pc
@@ -11,11 +12,15 @@
     <title>Title</title>
 </head>
 <body>
-<form action="/form2" method="post">
+<%--<form action="/form2" method="post">
     username:<input type="text" name="username"><br>
     password:<input type="text" name="password"><br>
     address: <input type="text" name="address"><br>
     <input type="submit" value="提交">
-</form>
+</form>--%>
+<!--#使用 -->
+<s:property value="#request.req"></s:property>
+<!--%使用 -->
+<s:textfield name="username" value="%{#session.sess}"></s:textfield>
 </body>
 </html>
