@@ -6,19 +6,23 @@
 
 <struts>
     <constant name="struts.i18n.encoding" value="utf-8"></constant>
-    <!--    <package name="hellodemo" extends="struts-default" namespace="/">
+    <!--入门案例-->
+    <package name="hellodemo" extends="struts-default" namespace="/">
             <action name="hello" class="Action.HelloAction">
-                &lt;!&ndash;配置方法的返回值到页面&ndash;&gt;
-                <result name="ok">/hello.jsp</result>
+    <!-- &lt;!&ndash;配置方法的返回值到页面&ndash;&gt;-->
+     <result name="ok">/hello.jsp</result>
             </action>
-        </package>-->
-    <!--引入hello.xml-->
+    </package>
+
+<!--引入hello.xml-->
     <!-- <include file="hello.xml"></include>-->
+
     <!--配置action的方法访问-->
-    <!--    <package name="method" extends="struts-default" namespace="/">
+    <package name="method" extends="struts-default" namespace="/">
             <action name="addAction" class="Method.BookAction" method="add"></action>
             <action name="updateAction" class="Method.BookAction" method="update"></action>
-        </package>-->
+    </package>
+
     <!--通配符方式实现-->
     <package name="method1" extends="struts-default" namespace="/">
         <!--
@@ -31,7 +35,7 @@
         <global-results>
             <result name="success">/hello.jsp</result>
         </global-results>
-        <!--<action name="book_*" class="Method.BookAction" method="{1}"></action>-->
+        <action name="book_*" class="Method.BookAction" method="{1}"></action>
         <action name="books" class="Action.BooksAction">
             <!--action访问路径-->
             <result name="success"  type="chain">orders</result>
@@ -40,6 +44,7 @@
             <result name="success">/hello.jsp</result>
         </action>
     </package>
+
     <package name="dmeo2" extends="struts-default" namespace="/">
         <action name="form1" class="Form.Form1DemoAction"></action>
         <action name="form2" class="Form.Form2DemoAction">
@@ -53,6 +58,7 @@
         <action name="list" class="Date.ListAction"></action>
         <action name="map" class="Date.MapAction"></action>
     </package>
+
     <package name="demo03" extends="struts-default" namespace="/">
         <action name="demo03" class="Action.UserAction">
             <result name="success">/ognl.jsp</result>
@@ -74,6 +80,28 @@
         </action>
         <action name="List1Stack" class="valuestack.ValueStackList1">
             <result name="success">/ognl.jsp</result>
+        </action>
+    </package>
+
+    <package name="demo04" extends="struts-default" namespace="/">
+<!--        &lt;!&ndash; 声明拦截器 &ndash;&gt;
+        <interceptors>
+            <interceptor name="loginintercept" class="Interceptor.LoginInterceptor"></interceptor>
+        </interceptors>-->
+        <action name="login" class="Action.LoginAction" method="logintext">
+<!--
+            &lt;!&ndash;使用自定义拦截器&ndash;&gt;
+            <interceptor-ref name="loginintercept"></interceptor-ref>
+            &lt;!&ndash;调用默认拦截器&ndash;&gt;
+            <interceptor-ref name="defaultStack"></interceptor-ref>
+            &lt;!&ndash;配置action里面某些方法不进行拦截
+            name属性值：excludeMethods
+            值：action不拦截的方法名称&ndash;&gt;
+            <param name="excludeMethods" >logintext</param>
+-->
+
+            <result name="success">/loginsuccess.jsp</result>
+            <result name="error">/loginerror.jsp</result>
         </action>
     </package>
 </struts>
